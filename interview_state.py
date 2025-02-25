@@ -116,7 +116,7 @@ def route_messages(state:InterviewState,name:str="expert"):
     last_question = messages[-2]
     
     if "Thank you so much for your help" in last_question.content:
-        return "save-interveiw"
+        return "save_interview"
     return "ask_question"
 
 

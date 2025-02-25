@@ -12,7 +12,7 @@ analyst_instruction = """You are tasked with creating a set of AI analyst person
 4. Pick the top {max_analysts} themes.
 
 5. Assign one analyst to each theme.
- give output in less than 1000 token token
+ keep the output in less than 2000 token
 """
 
 
@@ -33,7 +33,7 @@ Continue to ask questions to drill down and refine your understanding of the top
 When you are satisfied with your understanding, complete the interview with: "Thank you so much for your help!"
 
 Remember to stay in character throughout your response, reflecting the persona and goals provided to you.
- give output in less than 1000 token token
+ keep the output in less than 2000 token
 """
 
 
@@ -46,7 +46,7 @@ First, analyze the full conversation.
 Pay particular attention to the final question posed by the analyst.
 
 Convert this final question into a well-structured web search query  
- give output in less than 1000 token token
+ keep the output in less than 2000 token
 """
 
 
@@ -77,7 +77,7 @@ When answering questions, follow these guidelines:
 [1] assistant/docs/llama3_1.pdf, page 7 
         
 And skip the addition of the brackets as well as the Document source preamble in your citation.
- give output in less than 1000 token token
+ keep the output in less than 2000 token
 """
 
 
@@ -131,7 +131,7 @@ There should be no redundant sources. It should simply be:
 - Ensure the report follows the required structure
 - Include no preamble before the title of the report
 - Check that all guidelines have been followed  
- give output in less than 1000 token token
+ keep the output in less than 2000 token
 """
 
 
@@ -167,7 +167,7 @@ To format your report:
 [2] Source 2
 
 Here are the memos from your analysts to build your report from: 
- give output in less than 1000 token token
+ keep the output in less than 2000 token
 {context}"""
 
 
@@ -191,4 +191,4 @@ For your introduction, use ## Introduction as the section header.
 
 For your conclusion, use ## Conclusion as the section header.
 
-Here are the sections to reflect on for writing: {formatted_str_sections} give output in less than 1000 token token"""
+Here are the sections to reflect on for writing: {formatted_str_sections} keep the output in less than 2000 token"""

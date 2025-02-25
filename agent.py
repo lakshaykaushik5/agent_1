@@ -45,9 +45,9 @@ final_graph = final_builder.compile(interrupt_before=["human_feedback"],checkpoi
 # ---------------------------------------------
 
 
-max_analysts = 3
+max_analysts = 1
 topic = "The benefits for adapting Langgraph as an agent framework for junior dev"
-thread = {"configurable":{"thread_id":"1"}}
+thread = {"configurable":{"thread_id":"3"}}
 
 for event in final_graph.stream({"topic":topic,
                                  "max_analysts":max_analysts,
@@ -62,21 +62,21 @@ for event in final_graph.stream({"topic":topic,
             print("-" * 50)
             
 
-final_graph.update_state(thread,{"max_analysts":5,
-                                 "human_analyst_feedback":"Add two more agent one for startups jobs and one for high paying jobs"},as_node="human_feedback")
+# final_graph.update_state(thread,{"max_analysts":1,
+#                                  "human_analyst_feedback":"need one for startups jobs"},as_node="human_feedback")
 
 
-print("_"*50,"Human Feedback","_"*50)
+# print("_"*50,"Human Feedback","_"*50)
 
-for event in final_graph.stream(None, thread, stream_mode="values"):
-    analysts = event.get('analysts', '')
-    if analysts:
-        for analyst in analysts:
-            print(f"Name: {analyst.name}")
-            print(f"Affiliation: {analyst.affiliation}")
-            print(f"Role: {analyst.role}")
-            print(f"Description: {analyst.description}")
-            print("-" * 50)  
+# for event in final_graph.stream(None, thread, stream_mode="values"):
+#     analysts = event.get('analysts', '')
+#     if analysts:
+#         for analyst in analysts:
+#             print(f"Name: {analyst.name}")
+#             print(f"Affiliation: {analyst.affiliation}")
+#             print(f"Role: {analyst.role}")
+#             print(f"Description: {analyst.description}")
+#             print("-" * 50)  
             
 
 final_graph.update_state(thread, {"human_analyst_feedback": 
